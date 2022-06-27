@@ -9,7 +9,6 @@ public class UserInterface {
 
     public void runApplication() throws SQLException {
         Scanner scanner = new Scanner(System.in);
-        //noinspection InfiniteLoopStatement
         while (true) {
             String sb = "Выберите действие:\n" +
                     "1 - Получить текущую погоду\n" +
