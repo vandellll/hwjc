@@ -105,7 +105,6 @@ public class AccuWeatherProvider implements WeatherProvider {
             );
         }
         System.out.println();
-        // Save to database here.
         var data = response.getForecasts()
                 .stream().map(DailyForecast::new).collect(Collectors.toList());
         repository.saveDailyForecasts(data);
