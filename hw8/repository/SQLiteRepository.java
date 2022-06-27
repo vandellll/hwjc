@@ -16,7 +16,6 @@ public class SQLiteRepository implements DatabaseRepository {
     static {
         try {
             Class.forName("org.sqlite.JDBC");
-            // DDL section here. Database initialization.
             var repo = new SQLiteRepository();
             createTables(repo);
         } catch (ClassNotFoundException | SQLException e) {
@@ -57,7 +56,7 @@ public class SQLiteRepository implements DatabaseRepository {
 
     @Override
     public void saveDailyForecasts(List<DailyForecast> data) throws SQLException {
-        // Only DML code here.
+        
         var cmd_text =
                 "INSERT INTO daily_forecasts(city, date_time, weather_dayText, weather_nightText, minTemperature, maxTemperature)\n" +
                         "VALUES (?,?,?,?,?,?)\n" +
